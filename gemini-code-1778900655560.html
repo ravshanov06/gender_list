@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Noun & Its Gender - Presentation</title>
+    <style>
+        /* Minimalist Dark & Gold Theme */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: #0f172a; /* Deep dark slate */
+            color: #f8fafc;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* Slide Container */
+        .slide-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Slide Styles */
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 10%;
+        }
+
+        .slide.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #e2e8f0;
+            border-left: 6px solid #d69e2e; /* Gold accent bar */
+            padding-left: 20px;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #d69e2e;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p, li {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        li::before {
+            content: "•";
+            color: #d69e2e;
+            font-size: 2rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Highlight classes */
+        .gold-text {
+            color: #d69e2e;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            font-size: 1.6rem;
+            font-style: italic;
+            color: #94a3b8;
+            margin-top: 10px;
+        }
+
+        /* Content layouts */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Tables for Presentation */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #1e293b;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 14px 20px;
+            text-align: left;
+            font-size: 1.2rem;
+        }
+
+        th {
+            background-color: #334155;
+            color: #d69e2e;
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        td {
+            border-bottom: 1px solid #334155;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Custom boxes */
+        .box {
+            background-color: #1e293b;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            margin-bottom: 20px;
+        }
+
+        .exception-card {
+            background-color: #2d2210;
+            border-left: 6px solid #d69e2e;
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .word-badge {
+            display: inline-block;
+            background-color: #334155;
+            color: #f8fafc;
+            padding: 6px 14px;
+            margin: 5px;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Bottom Controls Indicator */
+        .controls-indicator {
+            position: absolute;
+            bottom: 20px;
+            right: 30px;
+            font-size: 0.9rem;
+            color: #64748b;
+            font-family: sans-serif;
+            background: rgba(30, 41, 59, 0.5);
+            padding: 5px 15px;
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .progress-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 4px;
+            background-color: #d69e2e;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide-container">
+        
+        <!-- Slide 1: Title -->
+        <div class="slide active" style="text-align: center; justify-content: center;">
+            <h1>The Noun & <br><span class="gold-text">English Gender System</span></h1>
+            <p class="subtitle">Core Concepts, Classifications, and Contextual Rules</p>
+        </div>
+
+        <!-- Slide 2: What is a Noun? -->
+        <div class="slide">
+            <h2>What is a Noun? (Ot nima?)</h2>
+            <div class="box">
+                <p style="font-size: 1.6rem;">A <span class="gold-text">noun</span> is a word that names a person, place, thing, or idea.</p>
+            </div>
+            <p style="margin-bottom: 20px; font-size: 1.4rem;">It directly answers two foundational grammatical triggers:</p>
+            <ul>
+                <li><span class="gold-text">Who? (Kim?)</span> &rarr; teacher, John, student, guest</li>
+                <li><span class="gold-text">What? (Nima?)</span> &rarr; door, friendship, table, courage</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: Four Pillars -->
+        <div class="slide">
+            <h2>Four Pillars of Nouns</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>1. Common Nouns (Turdosh)</h3>
+                    <p style="margin-bottom: 20px;">General, non-specific names for people, places, or things.<br><em>Ex: man, dog, corner, door.</em></p>
+
+                    <h3>2. Proper Nouns (Atoqli)</h3>
+                    <p>Specific names. Always capitalized.<br><em>Ex: John, France, Santa Claus, New Year.</em></p>
+                </div>
+                <div>
+                    <h3>3. Abstract Nouns (Mavhum)</h3>
+                    <p style="margin-bottom: 20px;">Intangible concepts that cannot be seen or touched.<br><em>Ex: Beauty, courage, friendship.</em></p>
+
+                    <h3>4. Collective Nouns (Jamlovchi)</h3>
+                    <p>Names a group of individuals or things treated as a single entity.<br><em>Ex: Family, crowd.</em></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Introduction to Gender -->
+        <div class="slide">
+            <h2>Introduction to Gender (Jins)</h2>
+            <p style="margin-bottom: 30px;">Unlike other languages where gender is purely grammatical, English gender matches biological sex or physical reality:</p>
+            
+            <div class="box">
+                <p style="margin-bottom: 10px;"><span class="gold-text" style="font-size: 1.4rem;">1. Masculine (Erlik):</span> Males, male relatives, male animals. <br><em>(boy, uncle, cock, nephew)</em></p>
+            </div>
+            <div class="box">
+                <p style="margin-bottom: 10px;"><span class="gold-text" style="font-size: 1.4rem;">2. Feminine (Ayollik):</span> Females, female relatives, female animals. <br><em>(girl, aunt, hen, niece)</em></p>
+            </div>
+            <div class="box">
+                <p><span class="gold-text" style="font-size: 1.4rem;">3. Neuter (O'rta):</span> Inanimate objects, gender-unknown animals, or infants. <br><em>(table, car, book)</em></p>
+            </div>
+        </div>
+
+        <!-- Slide 5: The Affective Exception -->
+        <div class="slide">
+            <h2>The Affective Exception (Istisno)</h2>
+            <div class="box" style="margin-bottom: 30px;">
+                <p><strong>Standard Rule:</strong> All inanimate objects belong to the <span class="gold-text">Neuter gender</span> and take the pronoun <strong>"It"</strong>.</p>
+            </div>
+            
+            <div class="exception-card">
+                <h3>⚠️ Exception Rule!</h3>
+                <p style="color: #ffffff; margin-bottom: 15px;">When speaking with affection, pride, or personification, specific objects like <strong>Ships (kemalar)</strong> and <strong>Cars (mashinalar)</strong> can take the <span class="gold-text">Feminine pronoun (She)</span>.</p>
+                <p style="font-style: italic; color: #cbd5e1; border-left: 3px solid #cbd5e0; padding-left: 10px;">Example: "She is my baby." (referring to a beloved car)</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Gender Pairs: People -->
+        <div class="slide">
+            <h2>Gender Pairs: People & Relatives</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Masculine (Erlik)</th>
+                        <th>Feminine (Ayollik)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>father (ota)</td><td>mother (ona)</td></tr>
+                    <tr><td>husband (er)</td><td>wife (xotin)</td></tr>
+                    <tr><td>king (qirol)</td><td>queen (qirolicha)</td></tr>
+                    <tr><td>uncle (amaki / tog'a)</td><td>aunt (amma / xola)</td></tr>
+                    <tr><td>nephew (o'g'il jiyan)</td><td>niece (qiz jiyan)</td></tr>
+                    <tr><td>widower (beva erkak)</td><td>widow (beva ayol)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Slide 7: Gender Pairs: Animals & Occupations -->
+        <div class="slide">
+            <h2>Animals & Occupations</h2>
+            <div class="grid-2">
+                <div>
+                    <h3>Animals (Hayvonlar)</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Masculine</th><th>Feminine</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>bull (buqa)</td><td>cow (sigir)</td></tr>
+                            <tr><td>dog (it)</td><td>bitch (urg'ochi it)</td></tr>
+                            <tr><td>drake (erkak o'rdak)</td><td>duck (urg'ochi)</td></tr>
+                            <tr><td>stallion (ayg'ir)</td><td>mare (baytal)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <h3>Occupations (-ess suffix)</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Masculine</th><th>Feminine</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>actor</td><td>actress</td></tr>
+                            <tr><td>waiter</td><td>waitress</td></tr>
+                            <tr><td>steward</td><td>stewardess</td></tr>
+                            <tr><td>hero</td><td>heroine (-ine)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Contextual Gender -->
+        <div class="slide">
+            <h2>Contextual Gender (Dual-Gender)</h2>
+            <div class="box">
+                <p style="font-size: 1.5rem; line-height: 1.5;">Many nouns do not explicitly show their gender. We must use <span class="gold-text">pronouns (he, she, his, her)</span> from the context to discover it.</p>
+            </div>
+            
+            <ul style="margin-top: 20px;">
+                <li>"My neighbour bought a bike for <span class="gold-text">his</span> son." &rarr; <strong>Masculine</strong> (Erkak qo'shni)</li>
+                <li>"My neighbour bought a bike for <span class="gold-text">her</span> son." &rarr; <strong>Feminine</strong> (Ayol qo'shni)</li>
+                <li>"My student is clever. <span class="gold-text">He</span> studies at the lyceum." &rarr; <strong>Masculine</strong> (O'g'il bola)</li>
+            </ul>
+        </div>
+
+        <!-- Slide 9: Dual-Gender Word Pools -->
+        <div class="slide">
+            <h2>Dual-Gender Word Pools</h2>
+            <p style="margin-bottom: 25px;">These words can represent either gender until context specifies otherwise:</p>
+            
+            <h3>People & Relatives:</h3>
+            <div style="margin-bottom: 20px;">
+                <span class="word-badge">Baby</span><span class="word-badge">child</span><span class="word-badge">cousin</span><span class="word-badge">infant</span><span class="word-badge">parent</span><span class="word-badge">relative</span><span class="word-badge">spouse</span><span class="word-badge">teenager</span><span class="word-badge">friend</span><span class="word-badge">neighbour</span>
+            </div>
+
+            <h3>Occupations (Kasblar):</h3>
+            <div style="margin-bottom: 20px;">
+                <span class="word-badge">Teacher</span><span class="word-badge">student</span><span class="word-badge">artist</span><span class="word-badge">cook</span><span class="word-badge">driver</span><span class="word-badge">doctor</span><span class="word-badge">journalist</span><span class="word-badge">lawyer</span>
+            </div>
+
+            <h3>Animals (Hayvonlar):</h3>
+            <div>
+                <span class="word-badge">Sheep</span><span class="word-badge">cat</span><span class="word-badge">horse</span><span class="word-badge">deer</span><span class="word-badge">crocodile</span><span class="word-badge">donkey</span>
+            </div>
+        </div>
+
+        <!-- Slide 10: Interactive Practice -->
+        <div class="slide">
+            <h2>Quick Practice / Kichik Mashq</h2>
+            <p style="margin-bottom: 30px; font-style: italic; color: #94a3b8;">Determine the hidden gender or missing pronoun:</p>
+            
+            <ol style="font-size: 1.4rem; padding-left: 20px; line-height: 2;">
+                <li>The <span class="gold-text">waitress</span> brought the menu. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Gender?</span> )</li>
+                <li>My cousin called me. <span class="gold-text">_______</span> is coming tomorrow from London. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Masculine pronoun?</span> )</li>
+                <li>Look at that car! <span class="gold-text">_______</span> is a real beauty. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Affectionate pronoun?</span> )</li>
+                <li>Our teacher explained the rule. <span class="gold-text">_______</span> wrote examples on the board. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Feminine pronoun?</span> )</li>
+            </ol>
+        </div>
+
+        <!-- Controls Indicator -->
+        <div class="controls-indicator">Use [Right Arrow] or [Space] to advance | [Left Arrow] to go back</div>
+        
+        <!-- Progress Bar -->
+        <div class="progress-bar" id="progress"></div>
+    </div>
+
+    <script>
+        // Presentation Logic
+        const slides = document.querySelectorAll('.slide');
+        const progressBar = document.getElementById('progress');
+        let currentSlide = 0;
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
+                }
+            });
+            // Update progress bar
+            const percentage = ((currentSlide + 1) / slides.length) * 100;
+            progressBar.style.width = percentage + '%';
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                updateSlides();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSlides();
+            }
+        }
+
+        // Keyboard Event Listeners
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault(); // Prevent space bar scrolling
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        // Initialize progress bar width on load
+        updateSlides();
+    </script>
+</body>
+</html>

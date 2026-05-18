@@ -181,18 +181,60 @@
             font-weight: 500;
         }
 
-        /* Bottom Controls Indicator */
-        .controls-indicator {
+        /* --- VISUAL BUTTONS NAVIGATION --- */
+        .nav-controls {
             position: absolute;
-            bottom: 20px;
-            right: 30px;
-            font-size: 0.9rem;
+            bottom: 30px;
+            right: 5%;
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border: 2px solid #334155;
+            padding: 12px 24px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            user-select: none;
+        }
+
+        .nav-btn:hover {
+            background-color: #d69e2e;
+            color: #0f172a;
+            border-color: #d69e2e;
+        }
+
+        .nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        .nav-btn:disabled {
+            background-color: #0f172a;
+            color: #334155;
+            border-color: #1e293b;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Slide Counter Overlay */
+        .slide-counter {
+            position: absolute;
+            bottom: 40px;
+            left: 5%;
+            font-size: 1.1rem;
             color: #64748b;
-            font-family: sans-serif;
-            background: rgba(30, 41, 59, 0.5);
-            padding: 5px 15px;
-            border-radius: 20px;
-            pointer-events: none;
+            font-weight: 500;
         }
 
         .progress-bar {
@@ -255,13 +297,13 @@
             <p style="margin-bottom: 30px;">Unlike other languages where gender is purely grammatical, English gender matches biological sex or physical reality:</p>
             
             <div class="box">
-                <p style="margin-bottom: 10px;"><span class="gold-text" style="font-size: 1.4rem;">1. Masculine (Erlik):</span> Males, male relatives, male animals. <br><em>(boy, uncle, cock, nephew)</em></p>
+                <p style="margin-bottom: 10px;"><span class="gold-text" style="font-size: 1.4rem;">1. Masculine (Erlik):</span> Males, male relatives, male animals. <br><em>(boy, uncle, cock, nephew)</em>[cite: 2]</p>
             </div>
             <div class="box">
-                <p style="margin-bottom: 10px;"><span class="gold-text" style="font-size: 1.4rem;">2. Feminine (Ayollik):</span> Females, female relatives, female animals. <br><em>(girl, aunt, hen, niece)</em></p>
+                <p style="margin-bottom: 10px;"><span class="gold-text" style="font-size: 1.4rem;">2. Feminine (Ayollik):</span> Females, female relatives, female animals. <br><em>(girl, aunt, hen, niece)</em>[cite: 2]</p>
             </div>
             <div class="box">
-                <p><span class="gold-text" style="font-size: 1.4rem;">3. Neuter (O'rta):</span> Inanimate objects, gender-unknown animals, or infants. <br><em>(table, car, book)</em></p>
+                <p><span class="gold-text" style="font-size: 1.4rem;">3. Neuter (O'rta):</span> Inanimate objects, gender-unknown animals, or infants. <br><em>(table, car, book)</em>[cite: 2]</p>
             </div>
         </div>
 
@@ -274,8 +316,8 @@
             
             <div class="exception-card">
                 <h3>⚠️ Exception Rule!</h3>
-                <p style="color: #ffffff; margin-bottom: 15px;">When speaking with affection, pride, or personification, specific objects like <strong>Ships (kemalar)</strong> and <strong>Cars (mashinalar)</strong> can take the <span class="gold-text">Feminine pronoun (She)</span>.</p>
-                <p style="font-style: italic; color: #cbd5e1; border-left: 3px solid #cbd5e0; padding-left: 10px;">Example: "She is my baby." (referring to a beloved car)</p>
+                <p style="color: #ffffff; margin-bottom: 15px;">When speaking with affection, pride, or personification, specific objects like <strong>Ships (kemalar)</strong> and <strong>Cars (mashinalar)</strong> can take the <span class="gold-text">Feminine pronoun (She)</span>.[cite: 1, 2]</p>
+                <p style="font-style: italic; color: #cbd5e1; border-left: 3px solid #cbd5e0; padding-left: 10px;">Example: "She is my baby." (referring to a beloved car)[cite: 1, 2]</p>
             </div>
         </div>
 
@@ -339,12 +381,12 @@
         <div class="slide">
             <h2>Contextual Gender (Dual-Gender)</h2>
             <div class="box">
-                <p style="font-size: 1.5rem; line-height: 1.5;">Many nouns do not explicitly show their gender. We must use <span class="gold-text">pronouns (he, she, his, her)</span> from the context to discover it.</p>
+                <p style="font-size: 1.5rem; line-height: 1.5;">Many nouns do not explicitly show their gender. We must use <span class="gold-text">pronouns (he, she, his, her)</span> from the context to discover it.[cite: 1, 2]</p>
             </div>
             
             <ul style="margin-top: 20px;">
-                <li>"My neighbour bought a bike for <span class="gold-text">his</span> son." &rarr; <strong>Masculine</strong> (Erkak qo'shni)</li>
-                <li>"My neighbour bought a bike for <span class="gold-text">her</span> son." &rarr; <strong>Feminine</strong> (Ayol qo'shni)</li>
+                <li>"My neighbour bought a bike for <span class="gold-text">his</span> son." &rarr; <strong>Masculine</strong> (Erkak qo'shni)[cite: 1, 2]</li>
+                <li>"My neighbour bought a bike for <span class="gold-text">her</span> son." &rarr; <strong>Feminine</strong> (Ayol qo'shni)[cite: 1, 2]</li>
                 <li>"My student is clever. <span class="gold-text">He</span> studies at the lyceum." &rarr; <strong>Masculine</strong> (O'g'il bola)</li>
             </ul>
         </div>
@@ -376,15 +418,21 @@
             <p style="margin-bottom: 30px; font-style: italic; color: #94a3b8;">Determine the hidden gender or missing pronoun:</p>
             
             <ol style="font-size: 1.4rem; padding-left: 20px; line-height: 2;">
-                <li>The <span class="gold-text">waitress</span> brought the menu. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Gender?</span> )</li>
-                <li>My cousin called me. <span class="gold-text">_______</span> is coming tomorrow from London. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Masculine pronoun?</span> )</li>
-                <li>Look at that car! <span class="gold-text">_______</span> is a real beauty. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Affectionate pronoun?</span> )</li>
-                <li>Our teacher explained the rule. <span class="gold-text">_______</span> wrote examples on the board. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Feminine pronoun?</span> )</li>
+                <li>The <span class="gold-text">waitress</span> brought the menu. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Gender?</span> )[cite: 2]</li>
+                <li>My cousin called me. <span class="gold-text">_______</span> is coming tomorrow from London. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Masculine pronoun?</span> )[cite: 2]</li>
+                <li>Look at that car! <span class="gold-text">_______</span> is a real beauty. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Affectionate pronoun?</span> )[cite: 2]</li>
+                <li>Our teacher explained the rule. <span class="gold-text">_______</span> wrote examples on the board. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Feminine pronoun?</span> )[cite: 2]</li>
             </ol>
         </div>
 
-        <!-- Controls Indicator -->
-        <div class="controls-indicator">Use [Right Arrow] or [Space] to advance | [Left Arrow] to go back</div>
+        <!-- VISUAL BUTTONS CONTROLS -->
+        <div class="nav-controls">
+            <button class="nav-btn" id="prevBtn" onclick="prevSlide()">&larr; Back</button>
+            <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Next &rarr;</button>
+        </div>
+
+        <!-- SLIDE COUNTER OVERLAY -->
+        <div class="slide-counter" id="slideNum">Slide 1 of 10</div>
         
         <!-- Progress Bar -->
         <div class="progress-bar" id="progress"></div>
@@ -394,6 +442,9 @@
         // Presentation Logic
         const slides = document.querySelectorAll('.slide');
         const progressBar = document.getElementById('progress');
+        const slideNumDisplay = document.getElementById('slideNum');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
         let currentSlide = 0;
 
         function updateSlides() {
@@ -404,9 +455,17 @@
                     slide.classList.remove('active');
                 }
             });
+
             // Update progress bar
             const percentage = ((currentSlide + 1) / slides.length) * 100;
             progressBar.style.width = percentage + '%';
+
+            // Update slide counter text
+            slideNumDisplay.innerText = `Slide ${currentSlide + 1} of ${slides.length}`;
+
+            // Handle button disabled states
+            prevBtn.disabled = (currentSlide === 0);
+            nextBtn.disabled = (currentSlide === slides.length - 1);
         }
 
         function nextSlide() {
@@ -423,17 +482,17 @@
             }
         }
 
-        // Keyboard Event Listeners
+        // Keep Keyboard Event Listeners active for convenience
         window.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') {
-                e.preventDefault(); // Prevent space bar scrolling
+                e.preventDefault(); 
                 nextSlide();
             } else if (e.key === 'ArrowLeft') {
                 prevSlide();
             }
         });
 
-        // Initialize progress bar width on load
+        // Initial setup on load
         updateSlides();
     </script>
 </body>

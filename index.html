@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Noun & Its Gender - Presentation</title>
+    <title>English Grammar Presentation: Plurals</title>
     <style>
-        /* Minimalist Dark & Gold Theme */
+        /* Modern Dark & Gold Theme */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #0f172a; /* Deep dark slate */
+            background-color: #0f172a; /* Deep slate */
             color: #f8fafc;
             font-family: 'Helvetica Neue', Arial, sans-serif;
             overflow: hidden;
@@ -21,7 +21,6 @@
             width: 100vw;
         }
 
-        /* Slide Container */
         .slide-container {
             position: relative;
             width: 100%;
@@ -41,7 +40,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 60px 10%;
+            padding: 40px 8%;
         }
 
         .slide.active {
@@ -60,25 +59,25 @@
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: #e2e8f0;
             border-left: 6px solid #d69e2e; /* Gold accent bar */
             padding-left: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             color: #d69e2e;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             font-weight: 600;
         }
 
         p, li {
-            font-size: 1.35rem;
-            line-height: 1.6;
+            font-size: 1.25rem;
+            line-height: 1.5;
             color: #cbd5e1;
         }
 
@@ -87,18 +86,18 @@
         }
 
         li {
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             position: relative;
-            padding-left: 30px;
+            padding-left: 25px;
         }
 
         li::before {
             content: "•";
             color: #d69e2e;
-            font-size: 2rem;
+            font-size: 1.8rem;
             position: absolute;
             left: 0;
-            top: -5px;
+            top: -4px;
         }
 
         /* Highlight classes */
@@ -114,35 +113,42 @@
             margin-top: 10px;
         }
 
-        /* Content layouts */
+        /* Layouts */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 30px;
             align-items: start;
         }
 
-        /* Tables for Presentation */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            align-items: start;
+        }
+
+        /* Tables */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
+            margin-top: 5px;
             background-color: #1e293b;
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
         }
 
         th, td {
-            padding: 14px 20px;
+            padding: 10px 16px;
             text-align: left;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         th {
             background-color: #334155;
             color: #d69e2e;
             text-transform: uppercase;
-            font-size: 1rem;
+            font-size: 0.95rem;
             letter-spacing: 0.5px;
         }
 
@@ -154,34 +160,44 @@
             border-bottom: none;
         }
 
-        /* Custom boxes */
+        /* Technical components */
         .box {
             background-color: #1e293b;
-            padding: 25px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 6px;
             border: 1px solid #334155;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .exception-card {
             background-color: #2d2210;
             border-left: 6px solid #d69e2e;
-            padding: 25px;
-            border-radius: 0 8px 8px 0;
+            padding: 20px;
+            border-radius: 0 6px 6px 0;
+            margin-top: 10px;
         }
 
         .word-badge {
             display: inline-block;
             background-color: #334155;
             color: #f8fafc;
-            padding: 6px 14px;
-            margin: 5px;
+            padding: 4px 12px;
+            margin: 4px;
             border-radius: 4px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 500;
+            border: 1px solid #475569;
         }
 
-        /* --- VISUAL BUTTONS NAVIGATION --- */
+        .example-sentence {
+            font-style: italic;
+            color: #94a3b8;
+            border-left: 3px solid #d69e2e;
+            padding-left: 12px;
+            margin-top: 8px;
+        }
+
+        /* Navigation Buttons */
         .nav-controls {
             position: absolute;
             bottom: 30px;
@@ -195,8 +211,8 @@
             background-color: #1e293b;
             color: #f8fafc;
             border: 2px solid #334155;
-            padding: 12px 24px;
-            font-size: 1.1rem;
+            padding: 10px 22px;
+            font-size: 1rem;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -215,10 +231,6 @@
             border-color: #d69e2e;
         }
 
-        .nav-btn:active {
-            transform: scale(0.95);
-        }
-
         .nav-btn:disabled {
             background-color: #0f172a;
             color: #334155;
@@ -227,7 +239,6 @@
             transform: none;
         }
 
-        /* Slide Counter Overlay */
         .slide-counter {
             position: absolute;
             bottom: 40px;
@@ -253,176 +264,211 @@
         
         <!-- Slide 1: Title -->
         <div class="slide active" style="text-align: center; justify-content: center;">
-            <h1>The Noun & <br><span class="gold-text">English Gender System</span></h1>
-            <p class="subtitle">Core Concepts, Classifications, and Contextual Rules</p>
+            <h1>Plurals <br><span class="gold-text">Ko'plik Shakllari</span></h1>
+            <p class="subtitle">English Grammar Masterclass • Core Rules & Exceptions</p>
         </div>
 
-        <!-- Slide 2: What is a Noun? -->
+        <!-- Slide 2: Basic Rule & Pronunciation -->
         <div class="slide">
-            <h2>What is a Noun? (Ot nima?)</h2>
+            <h2>The General Rule & Pronunciation</h2>
             <div class="box">
-                <p style="font-size: 1.6rem;">A <span class="gold-text">noun</span> is a word that names a person, place, thing, or idea.</p>
+                <p>Ikki va undan ortiq shaxs, predmet, hayvon yoki joylarni ifodalash uchun <span class="gold-text">Plural (Ko'plik)</span> shaklidan foydalanamiz. Asosiy qoida: ot oxiriga <strong>-s</strong> qo'shimchasi qo'shiladi.</p>
+                <p class="example-sentence">Dog &rarr; dogs | Boy &rarr; boys</p>
             </div>
-            <p style="margin-bottom: 20px; font-size: 1.4rem;">It directly answers two foundational grammatical triggers:</p>
+            
+            <h3>⚠️ Pronunciation Rule (Talaffuz siri)</h3>
+            <p>Ko'plikdagi <strong>-s</strong> qo'shimchasi har doim ham bir xil o'qilmaydi:</p>
             <ul>
-                <li><span class="gold-text">Who? (Kim?)</span> &rarr; teacher, John, student, guest</li>
-                <li><span class="gold-text">What? (Nima?)</span> &rarr; door, friendship, table, courage</li>
+                <li>Agar ot <span class="gold-text">p, k, f</span> harflari bilan tugasa, talaffuzda <span class="gold-text">[s]</span> tovushini beradi: <br><em>Shops, cliffs, weeks.</em></li>
+                <li>Boshqa barcha holatlarda esa <span class="gold-text">[z]</span> tovushi kabi o'qiladi.</li>
             </ul>
         </div>
 
-        <!-- Slide 3: Four Pillars -->
+        <!-- Slide 3: Ending in -o, -ch, -sh, -s, -ss, -x -->
         <div class="slide">
-            <h2>Four Pillars of Nouns</h2>
-            <div class="grid-2">
-                <div>
-                    <h3>1. Common Nouns (Turdosh)</h3>
-                    <p style="margin-bottom: 20px;">General, non-specific names for people, places, or things.<br><em>Ex: man, dog, corner, door.</em></p>
-
-                    <h3>2. Proper Nouns (Atoqli)</h3>
-                    <p>Specific names. Always capitalized.<br><em>Ex: John, France, Santa Claus, New Year.</em></p>
-                </div>
-                <div>
-                    <h3>3. Abstract Nouns (Mavhum)</h3>
-                    <p style="margin-bottom: 20px;">Intangible concepts that cannot be seen or touched.<br><em>Ex: Beauty, courage, friendship.</em></p>
-
-                    <h3>4. Collective Nouns (Jamlovchi)</h3>
-                    <p>Names a group of individuals or things treated as a single entity.<br><em>Ex: Family, crowd.</em></p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: Introduction to Gender -->
-        <div class="slide">
-            <h2>Introduction to Gender (Jins)</h2>
-            <p style="margin-bottom: 30px;">Unlike other languages where gender is purely grammatical, English gender matches biological sex or physical reality:</p>
-            
+            <h2>Sibilant Endings: Adding -es</h2>
             <div class="box">
-                <p style="margin-bottom: 10px;"><span class="gold-text" style="font-size: 1.4rem;">1. Masculine (Erlik):</span> Males, male relatives, male animals. <br><em>(boy, uncle, cock, nephew)</em>[cite: 2]</p>
+                <p>Agar birlikdagi otlar <span class="gold-text">o, ch, sh, s, ss, x</span> harflari bilan tugasa, ularga ko'plikda <span class="gold-text">-es</span> qo'shimchasi qo'shiladi:</p>
+                <p class="example-sentence">Church &rarr; churches | Tomato &rarr; tomatoes</p>
             </div>
-            <div class="box">
-                <p style="margin-bottom: 10px;"><span class="gold-text" style="font-size: 1.4rem;">2. Feminine (Ayollik):</span> Females, female relatives, female animals. <br><em>(girl, aunt, hen, niece)</em>[cite: 2]</p>
-            </div>
-            <div class="box">
-                <p><span class="gold-text" style="font-size: 1.4rem;">3. Neuter (O'rta):</span> Inanimate objects, gender-unknown animals, or infants. <br><em>(table, car, book)</em>[cite: 2]</p>
-            </div>
-        </div>
 
-        <!-- Slide 5: The Affective Exception -->
-        <div class="slide">
-            <h2>The Affective Exception (Istisno)</h2>
-            <div class="box" style="margin-bottom: 30px;">
-                <p><strong>Standard Rule:</strong> All inanimate objects belong to the <span class="gold-text">Neuter gender</span> and take the pronoun <strong>"It"</strong>.</p>
-            </div>
-            
             <div class="exception-card">
-                <h3>⚠️ Exception Rule!</h3>
-                <p style="color: #ffffff; margin-bottom: 15px;">When speaking with affection, pride, or personification, specific objects like <strong>Ships (kemalar)</strong> and <strong>Cars (mashinalar)</strong> can take the <span class="gold-text">Feminine pronoun (She)</span>.[cite: 1, 2]</p>
-                <p style="font-style: italic; color: #cbd5e1; border-left: 3px solid #cbd5e0; padding-left: 10px;">Example: "She is my baby." (referring to a beloved car)[cite: 1, 2]</p>
+                <h3>⚠️ Exception Rule! (Faqat -s qo'shiladigan -o tovushlari)</h3>
+                <p>Quyidagi so'zlar <strong>-o</strong> bilan tugasa ham, ularga to'g'ridan-to'g'ri faqat <strong>-s</strong> qo'shiladi:</p>
+                <div style="margin-top: 10px;">
+                    <span class="word-badge">Dynamo</span><span class="word-badge">kilo</span><span class="word-badge">kimono</span><span class="word-badge">photo</span><span class="word-badge">soprano</span><span class="word-badge">zoo</span><span class="word-badge">video</span><span class="word-badge">kangaroo</span><span class="word-badge">piano</span>
+                </div>
             </div>
         </div>
 
-        <!-- Slide 6: Gender Pairs: People -->
+        <!-- Slide 4: The Y Element (Consonant vs Vowel) -->
         <div class="slide">
-            <h2>Gender Pairs: People & Relatives</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Masculine (Erlik)</th>
-                        <th>Feminine (Ayollik)</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>father (ota)</td><td>mother (ona)</td></tr>
-                    <tr><td>husband (er)</td><td>wife (xotin)</td></tr>
-                    <tr><td>king (qirol)</td><td>queen (qirolicha)</td></tr>
-                    <tr><td>uncle (amaki / tog'a)</td><td>aunt (amma / xola)</td></tr>
-                    <tr><td>nephew (o'g'il jiyan)</td><td>niece (qiz jiyan)</td></tr>
-                    <tr><td>widower (beva erkak)</td><td>widow (beva ayol)</td></tr>
-                </tbody>
-            </table>
+            <h2>The "-y" Rule: Consonant vs. Vowel</h2>
+            <div class="grid-2">
+                <div class="box">
+                    <h3>1. Consonant + Y &rarr; -ies</h3>
+                    <p>Agar <strong>-y</strong> harfidan oldin undosh harf kelsa, <strong>y</strong> tushib qoladi va o'rniga <span class="gold-text">-ies</span> qo'shiladi:</p>
+                    <p class="example-sentence">Baby &rarr; babies</p>
+                    <p class="example-sentence">Lady &rarr; ladies</p>
+                </div>
+                
+                <div class="box">
+                    <h3>2. Vowel + Y &rarr; -s</h3>
+                    <p>Agar <strong>-y</strong> harfidan oldin unli harf kelsa, hech narsa o'zgarmaydi, shunchaki <span class="gold-text">-s</span> qo'shiladi:</p>
+                    <p class="example-sentence">Boy &rarr; boys</p>
+                    <p class="example-sentence">Guy &rarr; guys</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Slide 7: Gender Pairs: Animals & Occupations -->
+        <!-- Slide 5: The F / FE Rules (12 Crucial Words) -->
         <div class="slide">
-            <h2>Animals & Occupations</h2>
+            <h2>The "-f / -fe" Rule: Mutation to -ves</h2>
+            <p style="margin-bottom: 15px;">Ingliz tilida shunday <span class="gold-text">12 ta so'z</span> borki, ularning oxiridagi <strong>f</strong> yoki <strong>fe</strong> tushib qolib, o'rniga <span class="gold-text">-ves</span> qo'shiladi:</p>
+            
+            <div class="grid-3">
+                <table>
+                    <tr><td>Shelf &rarr; <b>Shelves</b></td></tr>
+                    <tr><td>Calf &rarr; <b>Calves</b></td></tr>
+                    <tr><td>Half &rarr; <b>Halves</b></td></tr>
+                    <tr><td>Knife &rarr; <b>Knives</b></td></tr>
+                </table>
+                <table>
+                    <tr><td>Leaf &rarr; <b>Leaves</b></td></tr>
+                    <tr><td>Loaf &rarr; <b>Loaves</b></td></tr>
+                    <tr><td>Life &rarr; <b>Lives</b></td></tr>
+                    <tr><td>Self &rarr; <b>Selves</b></td></tr>
+                </table>
+                <table>
+                    <tr><td>Sheaf &rarr; <b>Sheaves</b></td></tr>
+                    <tr><td>Thief &rarr; <b>Thieves</b></td></tr>
+                    <tr><td>Wolf &rarr; <b>Wolves</b></td></tr>
+                    <tr><td>Wife &rarr; <b>Wives</b></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- Slide 6: Dual Option Fs & Regular Fs -->
+        <div class="slide">
+            <h2>F / FE: Dual Options & Regulars</h2>
+            <div class="box">
+                <h3>🔄 Dual Option Nouns (Ikkala shakli ham to'g'ri)</h3>
+                <p>Quyidagi 4 ta so'zga shunchaki <strong>-s</strong> qo'shish ham, yoki <strong>-ves</strong> ga o'zgartirish ham to'g'ri hisoblanadi:</p>
+                <ul style="margin-top: 10px;" class="grid-2">
+                    <li>Scarf &rarr; <em>scarfs / scarves</em></li>
+                    <li>Wharf &rarr; <em>wharfs / wharves</em></li>
+                    <li>Dwarf &rarr; <em>dwarfs / dwarves</em></li>
+                    <li>Hoof &rarr; <em>hoofs / hooves</em></li>
+                </ul>
+            </div>
+
+            <div class="box" style="background-color: #13251e; border-color: #1e3a2f;">
+                <h3>✅ Regular -f/-fe Words</h3>
+                <p>Yuqoridagi 16 ta so'zdan tashqari barcha f, fe bilan tugaydigan so'zlarga faqatgina <strong>-s</strong> qo'shiladi:</p>
+                <p class="example-sentence">Cliff &rarr; cliffs | Giraffe &rarr; giraffes</p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Irregular Plurals & Unchanged Forms -->
+        <div class="slide">
+            <h2>Irregular Plurals & Unchanged Forms</h2>
+            <div class="grid-2">
+                <div class="box">
+                    <h3>Mutating Irregulars (Siz o'zgaruvchilar)</h3>
+                    <p>Ushbu so'zlar umuman boshqa shaklga o'tadi, ularga <strong>-s</strong> qo'shilmaydi:</p>
+                    <ul style="font-size: 1.1rem; margin-top: 8px;">
+                        <li>Foot &rarr; <span class="gold-text">feet</span> | Tooth &rarr; <span class="gold-text">teeth</span></li>
+                        <li>Mouse &rarr; <span class="gold-text">mice</span> | Child &rarr; <span class="gold-text">children</span></li>
+                        <li>Ox &rarr; <span class="gold-text">oxen</span></li>
+                        <li>Man &rarr; <span class="gold-text">men</span> | Woman &rarr; <span class="gold-text">women</span></li>
+                    </ul>
+                </div>
+
+                <div class="box">
+                    <h3>Unchanged Forms (O'zgarmaydiganlar)</h3>
+                    <p>Birlik va ko'plik shakli bir xil bo'lgan otlar (Kontekstdagi fe'l yoki olmosh orqali aniqlanadi):</p>
+                    <p style="margin: 10px 0;"><span class="word-badge">Sheep</span><span class="word-badge">fish</span><span class="word-badge">deer</span></p>
+                    
+                    <div class="exception-card" style="padding: 10px; font-size: 1rem;">
+                        <strong>Fishes?</strong> Agar "fishes" shakli uchrasa, bu sonini emas, <span class="gold-text">baliklarning turi xilma-xilligini</span> anglatadi.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Always Plural Nouns -->
+        <div class="slide">
+            <h2>Always Plural Nouns (Hamma vaqt ko'plikda)</h2>
+            <p style="margin-bottom: 15px;">Ushbu so'zlarning birlik shakli yo'q. Ular har doim ko'plik fe'lini talab qiladi:</p>
+            
+            <div class="box">
+                <h3>1. General & Two-Part Items</h3>
+                <p><span class="gold-text">Police, clothes</span> &rarr; <em>Police <b>are</b> coming.</em></p>
+                <p style="margin-top: 10px;"><strong>Ikki qismdan iborat kiyim va jihozlar:</strong></p>
+                <p>Clothes: <em>Pants, trousers, pyjamas, etc.</em></p>
+                <p>Tools: <em>Binoculars, scales, scissors, pliers, etc.</em></p>
+            </div>
+
+            <div class="box">
+                <h3>2. Context-Free Permanent Plurals</h3>
+                <div style="line-height: 1.8;">
+                    <span class="word-badge">Arms</span><span class="word-badge">earnings</span><span class="word-badge">goods</span><span class="word-badge">wares</span><span class="word-badge">greens</span><span class="word-badge">pains</span><span class="word-badge">damages</span><span class="word-badge">outskirts</span><span class="word-badge">premises</span><span class="word-badge">quarters</span><span class="word-badge">surroundings</span><span class="word-badge">valuables</span><span class="word-badge">savings</span><span class="word-badge">stairs</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Special Ending Rules (-ics & Plural Lookalikes) -->
+        <div class="slide">
+            <h2>The "-ics" Conflict & Plural Lookalikes</h2>
+            <div class="grid-2">
+                <div class="box">
+                    <h3>1. Words ending in "-ics"</h3>
+                    <p><em>Physics, mathematics, athletics, politics, ethics.</em></p>
+                    <p style="margin-top: 10px;">Odatda shaxsiy ko'nikma ma'nosida <span class="gold-text">ko'plik</span> olinadi:</p>
+                    <p class="example-sentence">His mathematics <b>are</b> weak.</p>
+                    <p style="margin-top: 5px;">Lekin fan sifatida har doim <span class="gold-text">birlikda</span> keladi:</p>
+                    <p class="example-sentence">Mathematics <b>is</b> an exact subject.</p>
+                </div>
+
+                <div class="box">
+                    <h3>2. Plural Lookalikes (Asli birlik)</h3>
+                    <p>Ko'rinishi ko'plik bo'lsa ham, asli doim birlik bo'lgan va ortidan birlik fe'lini oladigan so'zlar (Ko'pligi yo'q):</p>
+                    <div style="margin-top: 10px;">
+                        <span class="word-badge">News</span><span class="word-badge">shingles</span><span class="word-badge">mumps</span><span class="word-badge">rickets</span><span class="word-badge">billiards</span><span class="word-badge">bowls</span><span class="word-badge">darts</span><span class="word-badge">dominoes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Foreign Words & Abbreviations -->
+        <div class="slide">
+            <h2>Foreign Plurals & Abbreviations</h2>
             <div class="grid-2">
                 <div>
-                    <h3>Animals (Hayvonlar)</h3>
-                    <table>
+                    <h3>Foreign Loan Words (Chet tili qoidalari)</h3>
+                    <table style="font-size: 1rem;">
                         <thead>
-                            <tr><th>Masculine</th><th>Feminine</th></tr>
+                            <tr><th>Singular</th><th>Plural</th></tr>
                         </thead>
                         <tbody>
-                            <tr><td>bull (buqa)</td><td>cow (sigir)</td></tr>
-                            <tr><td>dog (it)</td><td>bitch (urg'ochi it)</td></tr>
-                            <tr><td>drake (erkak o'rdak)</td><td>duck (urg'ochi)</td></tr>
-                            <tr><td>stallion (ayg'ir)</td><td>mare (baytal)</td></tr>
+                            <tr><td>Radius</td><td><b>Radii</b></td></tr>
+                            <tr><td>Crisis</td><td><b>Crises</b></td></tr>
+                            <tr><td>Cactus</td><td><b>Cacti</b></td></tr>
+                            <tr><td>Phenomenon</td><td><b>Phenomena</b></td></tr>
+                            <tr><td>Oasis</td><td><b>Oases</b></td></tr>
+                            <tr><td>Bacterium</td><td><b>Bacteria</b></td></tr>
                         </tbody>
                     </table>
                 </div>
-                <div>
-                    <h3>Occupations (-ess suffix)</h3>
-                    <table>
-                        <thead>
-                            <tr><th>Masculine</th><th>Feminine</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>actor</td><td>actress</td></tr>
-                            <tr><td>waiter</td><td>waitress</td></tr>
-                            <tr><td>steward</td><td>stewardess</td></tr>
-                            <tr><td>hero</td><td>heroine (-ine)</td></tr>
-                        </tbody>
-                    </table>
+                
+                <div class="box" style="margin-top: 25px;">
+                    <h3>Short Abbreviations (Kisqartmalar)</h3>
+                    <p>Qisqartma so'zlarning oxiriga kichik <strong>'s'</strong> harfi qo'shiladi:</p>
+                    
+                    <p class="example-sentence"><b>VIP</b> (Very Important Person) &rarr; <br><span class="gold-text">VIPs</span> (Very Important People)</p>
+                    <p class="example-sentence"><b>MP</b> (Member of Parliament) &rarr; <br><span class="gold-text">MPs</span> (Members of Parliament)</p>
                 </div>
             </div>
-        </div>
-
-        <!-- Slide 8: Contextual Gender -->
-        <div class="slide">
-            <h2>Contextual Gender (Dual-Gender)</h2>
-            <div class="box">
-                <p style="font-size: 1.5rem; line-height: 1.5;">Many nouns do not explicitly show their gender. We must use <span class="gold-text">pronouns (he, she, his, her)</span> from the context to discover it.[cite: 1, 2]</p>
-            </div>
-            
-            <ul style="margin-top: 20px;">
-                <li>"My neighbour bought a bike for <span class="gold-text">his</span> son." &rarr; <strong>Masculine</strong> (Erkak qo'shni)[cite: 1, 2]</li>
-                <li>"My neighbour bought a bike for <span class="gold-text">her</span> son." &rarr; <strong>Feminine</strong> (Ayol qo'shni)[cite: 1, 2]</li>
-                <li>"My student is clever. <span class="gold-text">He</span> studies at the lyceum." &rarr; <strong>Masculine</strong> (O'g'il bola)</li>
-            </ul>
-        </div>
-
-        <!-- Slide 9: Dual-Gender Word Pools -->
-        <div class="slide">
-            <h2>Dual-Gender Word Pools</h2>
-            <p style="margin-bottom: 25px;">These words can represent either gender until context specifies otherwise:</p>
-            
-            <h3>People & Relatives:</h3>
-            <div style="margin-bottom: 20px;">
-                <span class="word-badge">Baby</span><span class="word-badge">child</span><span class="word-badge">cousin</span><span class="word-badge">infant</span><span class="word-badge">parent</span><span class="word-badge">relative</span><span class="word-badge">spouse</span><span class="word-badge">teenager</span><span class="word-badge">friend</span><span class="word-badge">neighbour</span>
-            </div>
-
-            <h3>Occupations (Kasblar):</h3>
-            <div style="margin-bottom: 20px;">
-                <span class="word-badge">Teacher</span><span class="word-badge">student</span><span class="word-badge">artist</span><span class="word-badge">cook</span><span class="word-badge">driver</span><span class="word-badge">doctor</span><span class="word-badge">journalist</span><span class="word-badge">lawyer</span>
-            </div>
-
-            <h3>Animals (Hayvonlar):</h3>
-            <div>
-                <span class="word-badge">Sheep</span><span class="word-badge">cat</span><span class="word-badge">horse</span><span class="word-badge">deer</span><span class="word-badge">crocodile</span><span class="word-badge">donkey</span>
-            </div>
-        </div>
-
-        <!-- Slide 10: Interactive Practice -->
-        <div class="slide">
-            <h2>Quick Practice / Kichik Mashq</h2>
-            <p style="margin-bottom: 30px; font-style: italic; color: #94a3b8;">Determine the hidden gender or missing pronoun:</p>
-            
-            <ol style="font-size: 1.4rem; padding-left: 20px; line-height: 2;">
-                <li>The <span class="gold-text">waitress</span> brought the menu. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Gender?</span> )[cite: 2]</li>
-                <li>My cousin called me. <span class="gold-text">_______</span> is coming tomorrow from London. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Masculine pronoun?</span> )[cite: 2]</li>
-                <li>Look at that car! <span class="gold-text">_______</span> is a real beauty. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Affectionate pronoun?</span> )[cite: 2]</li>
-                <li>Our teacher explained the rule. <span class="gold-text">_______</span> wrote examples on the board. &rarr; ( <span style="color: #94a3b8; font-size: 1.2rem; font-style: italic;">Feminine pronoun?</span> )[cite: 2]</li>
-            </ol>
         </div>
 
         <!-- VISUAL BUTTONS CONTROLS -->
@@ -482,7 +528,7 @@
             }
         }
 
-        // Keep Keyboard Event Listeners active for convenience
+        // Keyboard Event Listeners
         window.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault(); 
@@ -492,7 +538,7 @@
             }
         });
 
-        // Initial setup on load
+        // Initialize setup on load
         updateSlides();
     </script>
 </body>

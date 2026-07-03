@@ -3,543 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Grammar Presentation: Plurals</title>
+    <title>Premium Math & Algebra Quiz</title>
     <style>
-        /* Modern Dark & Gold Theme */
+        :root {
+            --bg-color: #0d0e12;
+            --card-bg: #161822;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-green: #10b981;
+            --accent-red: #ef4444;
+            --border-color: #26293b;
+            --hover-bg: #1f2235;
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         body {
-            background-color: #0f172a; /* Deep slate */
-            color: #f8fafc;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            overflow: hidden;
-            height: 100vh;
-            width: 100vw;
-        }
-
-        .slide-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Slide Styles */
-        .slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.4s ease, visibility 0.4s ease;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            padding: 40px 8%;
-        }
-
-        .slide.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Typography */
-        h1 {
-            font-size: 3.5rem;
-            color: #ffffff;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: 2.3rem;
-            color: #e2e8f0;
-            border-left: 6px solid #d69e2e; /* Gold accent bar */
-            padding-left: 20px;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        h3 {
-            font-size: 1.35rem;
-            color: #d69e2e;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-
-        p, li {
-            font-size: 1.25rem;
-            line-height: 1.5;
-            color: #cbd5e1;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-        }
-
-        li::before {
-            content: "•";
-            color: #d69e2e;
-            font-size: 1.8rem;
-            position: absolute;
-            left: 0;
-            top: -4px;
-        }
-
-        /* Highlight classes */
-        .gold-text {
-            color: #d69e2e;
-            font-weight: bold;
-        }
-
-        .subtitle {
-            font-size: 1.6rem;
-            font-style: italic;
-            color: #94a3b8;
-            margin-top: 10px;
-        }
-
-        /* Layouts */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            align-items: start;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 20px;
-            align-items: start;
-        }
-
-        /* Tables */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 5px;
-            background-color: #1e293b;
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        th, td {
-            padding: 10px 16px;
-            text-align: left;
-            font-size: 1.1rem;
-        }
-
-        th {
-            background-color: #334155;
-            color: #d69e2e;
-            text-transform: uppercase;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-        }
-
-        td {
-            border-bottom: 1px solid #334155;
-        }
-
-        tr:last-child td {
-            border-bottom: none;
-        }
-
-        /* Technical components */
-        .box {
-            background-color: #1e293b;
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid #334155;
-            margin-bottom: 15px;
-        }
-
-        .exception-card {
-            background-color: #2d2210;
-            border-left: 6px solid #d69e2e;
-            padding: 20px;
-            border-radius: 0 6px 6px 0;
-            margin-top: 10px;
-        }
-
-        .word-badge {
-            display: inline-block;
-            background-color: #334155;
-            color: #f8fafc;
-            padding: 4px 12px;
-            margin: 4px;
-            border-radius: 4px;
-            font-size: 1.05rem;
-            font-weight: 500;
-            border: 1px solid #475569;
-        }
-
-        .example-sentence {
-            font-style: italic;
-            color: #94a3b8;
-            border-left: 3px solid #d69e2e;
-            padding-left: 12px;
-            margin-top: 8px;
-        }
-
-        /* Navigation Buttons */
-        .nav-controls {
-            position: absolute;
-            bottom: 30px;
-            right: 5%;
-            display: flex;
-            gap: 15px;
-            z-index: 100;
-        }
-
-        .nav-btn {
-            background-color: #1e293b;
-            color: #f8fafc;
-            border: 2px solid #334155;
-            padding: 10px 22px;
-            font-size: 1rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            display: flex;
             align-items: center;
-            gap: 8px;
-            user-select: none;
+            min-height: 100vh;
+            padding: 20px;
         }
 
-        .nav-btn:hover {
-            background-color: #d69e2e;
-            color: #0f172a;
-            border-color: #d69e2e;
-        }
-
-        .nav-btn:disabled {
-            background-color: #0f172a;
-            color: #334155;
-            border-color: #1e293b;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        .slide-counter {
-            position: absolute;
-            bottom: 40px;
-            left: 5%;
-            font-size: 1.1rem;
-            color: #64748b;
-            font-weight: 500;
+        .quiz-container {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
 
         .progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            height: 4px;
-            background-color: #d69e2e;
-            transition: width 0.3s ease;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .question-text {
+            font-size: 1.35rem;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 28px;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 16px 20px;
+            border-radius: 8px;
+            text-align: left;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+            outline: none;
+            width: 100%;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            background-color: var(--hover-bg);
+            border-color: var(--text-muted);
+        }
+
+        .option-btn.correct {
+            background-color: rgba(16, 185, 129, 0.15) !important;
+            border-color: var(--accent-green) !important;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        .option-btn.incorrect {
+            background-color: rgba(239, 68, 68, 0.15) !important;
+            border-color: var(--accent-red) !important;
+            color: var(--accent-red);
+        }
+
+        .disabled {
+            pointer-events: none;
+        }
+
+        .score-screen {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .restart-btn {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            border: none;
+            padding: 14px 36px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .restart-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Math formatting */
+        .math {
+            font-family: 'Times New Roman', 'CMU Serif', serif;
+            font-style: italic;
+        }
+        .math-bold {
+            font-weight: 700;
+        }
+        .frac {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: center;
+        }
+        .frac .num {
+            display: block;
+            border-bottom: 1px solid var(--text-main);
+            padding: 0 4px 2px 4px;
+        }
+        .frac .den {
+            display: block;
+            padding: 2px 4px 0 4px;
+        }
+        .sqrt {
+            display: inline-block;
+            position: relative;
+            padding-left: 6px;
+        }
+        .sqrt::before {
+            content: "√";
+            font-size: 1.1em;
+            margin-right: 2px;
+        }
+        .sqrt .radicand {
+            border-top: 1px solid var(--text-main);
+            padding: 0 4px;
         }
     </style>
 </head>
 <body>
 
-    <div class="slide-container">
-        
-        <!-- Slide 1: Title -->
-        <div class="slide active" style="text-align: center; justify-content: center;">
-            <h1>Plurals <br><span class="gold-text">Ko'plik Shakllari</span></h1>
-            <p class="subtitle">English Grammar Masterclass • Core Rules & Exceptions</p>
-        </div>
-
-        <!-- Slide 2: Basic Rule & Pronunciation -->
-        <div class="slide">
-            <h2>The General Rule & Pronunciation</h2>
-            <div class="box">
-                <p>Ikki va undan ortiq shaxs, predmet, hayvon yoki joylarni ifodalash uchun <span class="gold-text">Plural (Ko'plik)</span> shaklidan foydalanamiz. Asosiy qoida: ot oxiriga <strong>-s</strong> qo'shimchasi qo'shiladi.</p>
-                <p class="example-sentence">Dog &rarr; dogs | Boy &rarr; boys</p>
-            </div>
-            
-            <h3>⚠️ Pronunciation Rule (Talaffuz siri)</h3>
-            <p>Ko'plikdagi <strong>-s</strong> qo'shimchasi har doim ham bir xil o'qilmaydi:</p>
-            <ul>
-                <li>Agar ot <span class="gold-text">p, k, f</span> harflari bilan tugasa, talaffuzda <span class="gold-text">[s]</span> tovushini beradi: <br><em>Shops, cliffs, weeks.</em></li>
-                <li>Boshqa barcha holatlarda esa <span class="gold-text">[z]</span> tovushi kabi o'qiladi.</li>
-            </ul>
-        </div>
-
-        <!-- Slide 3: Ending in -o, -ch, -sh, -s, -ss, -x -->
-        <div class="slide">
-            <h2>Sibilant Endings: Adding -es</h2>
-            <div class="box">
-                <p>Agar birlikdagi otlar <span class="gold-text">o, ch, sh, s, ss, x</span> harflari bilan tugasa, ularga ko'plikda <span class="gold-text">-es</span> qo'shimchasi qo'shiladi:</p>
-                <p class="example-sentence">Church &rarr; churches | Tomato &rarr; tomatoes</p>
-            </div>
-
-            <div class="exception-card">
-                <h3>⚠️ Exception Rule! (Faqat -s qo'shiladigan -o tovushlari)</h3>
-                <p>Quyidagi so'zlar <strong>-o</strong> bilan tugasa ham, ularga to'g'ridan-to'g'ri faqat <strong>-s</strong> qo'shiladi:</p>
-                <div style="margin-top: 10px;">
-                    <span class="word-badge">Dynamo</span><span class="word-badge">kilo</span><span class="word-badge">kimono</span><span class="word-badge">photo</span><span class="word-badge">soprano</span><span class="word-badge">zoo</span><span class="word-badge">video</span><span class="word-badge">kangaroo</span><span class="word-badge">piano</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 4: The Y Element (Consonant vs Vowel) -->
-        <div class="slide">
-            <h2>The "-y" Rule: Consonant vs. Vowel</h2>
-            <div class="grid-2">
-                <div class="box">
-                    <h3>1. Consonant + Y &rarr; -ies</h3>
-                    <p>Agar <strong>-y</strong> harfidan oldin undosh harf kelsa, <strong>y</strong> tushib qoladi va o'rniga <span class="gold-text">-ies</span> qo'shiladi:</p>
-                    <p class="example-sentence">Baby &rarr; babies</p>
-                    <p class="example-sentence">Lady &rarr; ladies</p>
-                </div>
-                
-                <div class="box">
-                    <h3>2. Vowel + Y &rarr; -s</h3>
-                    <p>Agar <strong>-y</strong> harfidan oldin unli harf kelsa, hech narsa o'zgarmaydi, shunchaki <span class="gold-text">-s</span> qo'shiladi:</p>
-                    <p class="example-sentence">Boy &rarr; boys</p>
-                    <p class="example-sentence">Guy &rarr; guys</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 5: The F / FE Rules (12 Crucial Words) -->
-        <div class="slide">
-            <h2>The "-f / -fe" Rule: Mutation to -ves</h2>
-            <p style="margin-bottom: 15px;">Ingliz tilida shunday <span class="gold-text">12 ta so'z</span> borki, ularning oxiridagi <strong>f</strong> yoki <strong>fe</strong> tushib qolib, o'rniga <span class="gold-text">-ves</span> qo'shiladi:</p>
-            
-            <div class="grid-3">
-                <table>
-                    <tr><td>Shelf &rarr; <b>Shelves</b></td></tr>
-                    <tr><td>Calf &rarr; <b>Calves</b></td></tr>
-                    <tr><td>Half &rarr; <b>Halves</b></td></tr>
-                    <tr><td>Knife &rarr; <b>Knives</b></td></tr>
-                </table>
-                <table>
-                    <tr><td>Leaf &rarr; <b>Leaves</b></td></tr>
-                    <tr><td>Loaf &rarr; <b>Loaves</b></td></tr>
-                    <tr><td>Life &rarr; <b>Lives</b></td></tr>
-                    <tr><td>Self &rarr; <b>Selves</b></td></tr>
-                </table>
-                <table>
-                    <tr><td>Sheaf &rarr; <b>Sheaves</b></td></tr>
-                    <tr><td>Thief &rarr; <b>Thieves</b></td></tr>
-                    <tr><td>Wolf &rarr; <b>Wolves</b></td></tr>
-                    <tr><td>Wife &rarr; <b>Wives</b></td></tr>
-                </table>
-            </div>
-        </div>
-
-        <!-- Slide 6: Dual Option Fs & Regular Fs -->
-        <div class="slide">
-            <h2>F / FE: Dual Options & Regulars</h2>
-            <div class="box">
-                <h3>🔄 Dual Option Nouns (Ikkala shakli ham to'g'ri)</h3>
-                <p>Quyidagi 4 ta so'zga shunchaki <strong>-s</strong> qo'shish ham, yoki <strong>-ves</strong> ga o'zgartirish ham to'g'ri hisoblanadi:</p>
-                <ul style="margin-top: 10px;" class="grid-2">
-                    <li>Scarf &rarr; <em>scarfs / scarves</em></li>
-                    <li>Wharf &rarr; <em>wharfs / wharves</em></li>
-                    <li>Dwarf &rarr; <em>dwarfs / dwarves</em></li>
-                    <li>Hoof &rarr; <em>hoofs / hooves</em></li>
-                </ul>
-            </div>
-
-            <div class="box" style="background-color: #13251e; border-color: #1e3a2f;">
-                <h3>✅ Regular -f/-fe Words</h3>
-                <p>Yuqoridagi 16 ta so'zdan tashqari barcha f, fe bilan tugaydigan so'zlarga faqatgina <strong>-s</strong> qo'shiladi:</p>
-                <p class="example-sentence">Cliff &rarr; cliffs | Giraffe &rarr; giraffes</p>
-            </div>
-        </div>
-
-        <!-- Slide 7: Irregular Plurals & Unchanged Forms -->
-        <div class="slide">
-            <h2>Irregular Plurals & Unchanged Forms</h2>
-            <div class="grid-2">
-                <div class="box">
-                    <h3>Mutating Irregulars (Siz o'zgaruvchilar)</h3>
-                    <p>Ushbu so'zlar umuman boshqa shaklga o'tadi, ularga <strong>-s</strong> qo'shilmaydi:</p>
-                    <ul style="font-size: 1.1rem; margin-top: 8px;">
-                        <li>Foot &rarr; <span class="gold-text">feet</span> | Tooth &rarr; <span class="gold-text">teeth</span></li>
-                        <li>Mouse &rarr; <span class="gold-text">mice</span> | Child &rarr; <span class="gold-text">children</span></li>
-                        <li>Ox &rarr; <span class="gold-text">oxen</span></li>
-                        <li>Man &rarr; <span class="gold-text">men</span> | Woman &rarr; <span class="gold-text">women</span></li>
-                    </ul>
-                </div>
-
-                <div class="box">
-                    <h3>Unchanged Forms (O'zgarmaydiganlar)</h3>
-                    <p>Birlik va ko'plik shakli bir xil bo'lgan otlar (Kontekstdagi fe'l yoki olmosh orqali aniqlanadi):</p>
-                    <p style="margin: 10px 0;"><span class="word-badge">Sheep</span><span class="word-badge">fish</span><span class="word-badge">deer</span></p>
-                    
-                    <div class="exception-card" style="padding: 10px; font-size: 1rem;">
-                        <strong>Fishes?</strong> Agar "fishes" shakli uchrasa, bu sonini emas, <span class="gold-text">baliklarning turi xilma-xilligini</span> anglatadi.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 8: Always Plural Nouns -->
-        <div class="slide">
-            <h2>Always Plural Nouns (Hamma vaqt ko'plikda)</h2>
-            <p style="margin-bottom: 15px;">Ushbu so'zlarning birlik shakli yo'q. Ular har doim ko'plik fe'lini talab qiladi:</p>
-            
-            <div class="box">
-                <h3>1. General & Two-Part Items</h3>
-                <p><span class="gold-text">Police, clothes</span> &rarr; <em>Police <b>are</b> coming.</em></p>
-                <p style="margin-top: 10px;"><strong>Ikki qismdan iborat kiyim va jihozlar:</strong></p>
-                <p>Clothes: <em>Pants, trousers, pyjamas, etc.</em></p>
-                <p>Tools: <em>Binoculars, scales, scissors, pliers, etc.</em></p>
-            </div>
-
-            <div class="box">
-                <h3>2. Context-Free Permanent Plurals</h3>
-                <div style="line-height: 1.8;">
-                    <span class="word-badge">Arms</span><span class="word-badge">earnings</span><span class="word-badge">goods</span><span class="word-badge">wares</span><span class="word-badge">greens</span><span class="word-badge">pains</span><span class="word-badge">damages</span><span class="word-badge">outskirts</span><span class="word-badge">premises</span><span class="word-badge">quarters</span><span class="word-badge">surroundings</span><span class="word-badge">valuables</span><span class="word-badge">savings</span><span class="word-badge">stairs</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 9: Special Ending Rules (-ics & Plural Lookalikes) -->
-        <div class="slide">
-            <h2>The "-ics" Conflict & Plural Lookalikes</h2>
-            <div class="grid-2">
-                <div class="box">
-                    <h3>1. Words ending in "-ics"</h3>
-                    <p><em>Physics, mathematics, athletics, politics, ethics.</em></p>
-                    <p style="margin-top: 10px;">Odatda shaxsiy ko'nikma ma'nosida <span class="gold-text">ko'plik</span> olinadi:</p>
-                    <p class="example-sentence">His mathematics <b>are</b> weak.</p>
-                    <p style="margin-top: 5px;">Lekin fan sifatida har doim <span class="gold-text">birlikda</span> keladi:</p>
-                    <p class="example-sentence">Mathematics <b>is</b> an exact subject.</p>
-                </div>
-
-                <div class="box">
-                    <h3>2. Plural Lookalikes (Asli birlik)</h3>
-                    <p>Ko'rinishi ko'plik bo'lsa ham, asli doim birlik bo'lgan va ortidan birlik fe'lini oladigan so'zlar (Ko'pligi yo'q):</p>
-                    <div style="margin-top: 10px;">
-                        <span class="word-badge">News</span><span class="word-badge">shingles</span><span class="word-badge">mumps</span><span class="word-badge">rickets</span><span class="word-badge">billiards</span><span class="word-badge">bowls</span><span class="word-badge">darts</span><span class="word-badge">dominoes</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Slide 10: Foreign Words & Abbreviations -->
-        <div class="slide">
-            <h2>Foreign Plurals & Abbreviations</h2>
-            <div class="grid-2">
-                <div>
-                    <h3>Foreign Loan Words (Chet tili qoidalari)</h3>
-                    <table style="font-size: 1rem;">
-                        <thead>
-                            <tr><th>Singular</th><th>Plural</th></tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>Radius</td><td><b>Radii</b></td></tr>
-                            <tr><td>Crisis</td><td><b>Crises</b></td></tr>
-                            <tr><td>Cactus</td><td><b>Cacti</b></td></tr>
-                            <tr><td>Phenomenon</td><td><b>Phenomena</b></td></tr>
-                            <tr><td>Oasis</td><td><b>Oases</b></td></tr>
-                            <tr><td>Bacterium</td><td><b>Bacteria</b></td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                
-                <div class="box" style="margin-top: 25px;">
-                    <h3>Short Abbreviations (Kisqartmalar)</h3>
-                    <p>Qisqartma so'zlarning oxiriga kichik <strong>'s'</strong> harfi qo'shiladi:</p>
-                    
-                    <p class="example-sentence"><b>VIP</b> (Very Important Person) &rarr; <br><span class="gold-text">VIPs</span> (Very Important People)</p>
-                    <p class="example-sentence"><b>MP</b> (Member of Parliament) &rarr; <br><span class="gold-text">MPs</span> (Members of Parliament)</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- VISUAL BUTTONS CONTROLS -->
-        <div class="nav-controls">
-            <button class="nav-btn" id="prevBtn" onclick="prevSlide()">&larr; Back</button>
-            <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Next &rarr;</button>
-        </div>
-
-        <!-- SLIDE COUNTER OVERLAY -->
-        <div class="slide-counter" id="slideNum">Slide 1 of 10</div>
-        
-        <!-- Progress Bar -->
+    <div class="quiz-container" id="quiz">
         <div class="progress-bar" id="progress"></div>
+        <div class="question-text" id="question"></div>
+        <div class="options-container" id="options"></div>
     </div>
 
     <script>
-        // Presentation Logic
-        const slides = document.querySelectorAll('.slide');
-        const progressBar = document.getElementById('progress');
-        const slideNumDisplay = document.getElementById('slideNum');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        let currentSlide = 0;
+        // All questions – correct answer is always index 0 (A variant)
+        const quizData = [
+            { question: "Vektorlar kollinearlik sharti?", variants: ["a<sub>x</sub>/b<sub>x</sub> = a<sub>y</sub>/b<sub>y</sub> = a<sub>z</sub>/b<sub>z</sub>", "(a<sub>x</sub>+a<sub>y</sub>+a<sub>z</sub>)/(b<sub>x</sub>+b<sub>y</sub>+b<sub>z</sub>) = 1", "a<sub>x</sub>b<sub>x</sub> + a<sub>y</sub>b<sub>y</sub> + a<sub>z</sub>b<sub>z</sub> = 1", "a<sub>x</sub>/b<sub>x</sub> + a<sub>y</sub>/b<sub>y</sub> = a<sub>z</sub>/b<sub>z</sub>"] },
+            { question: "Bazis vektorlar bo‘yicha qurilgan tetraedr hajmi?", variants: ["V = <sup>1</sup>/<sub>6</sub>", "V = 1", "V = -1", "V = <sup>1</sup>/<sub>2</sub>"] },
+            { question: "a{3,4}, b{1,1} berilgan. π<sub>b</sub> a ni toping.", variants: ["7√2/2", "√2/2", "√7", "7/2"] },
+            { question: "x = 2a + 3b - c vektorni toping", variants: ["x{-10,13,4}", "x{0,10,4}", "x{10,10,1}", "x{4,8,5}"] },
+            { question: "x - y = 0 va x + y = 0 kesishuvchi to‘g‘ri chiziqlar bissektrisalari?", variants: ["x = y = 0", "x = y = -1", "x = y = 1", "x = 0, y = 1"] },
+            { question: "Tekisliklar perpendikulyarlik sharti?", variants: ["AA<sub>1</sub> + BB<sub>1</sub> + CC<sub>1</sub> = 0", "A/A<sub>1</sub> = B/B<sub>1</sub> = C/C<sub>1</sub> = 0", "(A+B+C)(A<sub>1</sub>+B<sub>1</sub>+C<sub>1</sub>)=0", "A/A<sub>1</sub>+B/B<sub>1</sub>+C/C<sub>1</sub>=0"] },
+            { question: "y = 5x - 6 va y = 5x + 4 to‘g‘ri chiziqlar burchagi?", variants: ["α = 0°", "α = 30°", "α = 45°", "α = 60°"] },
+            { question: "y = k<sub>1</sub>x + b<sub>1</sub> va y = k<sub>2</sub>x + b<sub>2</sub> kesishish burchagi tangensi?", variants: ["tgα = (k<sub>2</sub> - k<sub>1</sub>)/(1 + k<sub>1</sub>k<sub>2</sub>)", "tgα = 1 + (k<sub>1</sub>+k<sub>2</sub>)/(1-k<sub>1</sub>k<sub>2</sub>)", "tgα = 1 + (k<sub>1</sub>-k<sub>2</sub>)/(1-k<sub>1</sub>k<sub>2</sub>)", "tgα = 1 + (k<sub>1</sub>+k<sub>2</sub>)/(1+k<sub>1</sub>k<sub>2</sub>)"] },
+            { question: "AB kesma o‘rtasi radius-vektori?", variants: ["(r<sub>A</sub> + r<sub>B</sub>)/2", "(r<sub>B</sub> - r<sub>A</sub>)/2", "r<sub>A</sub> + r<sub>B</sub>", "r<sub>A</sub> - r<sub>B</sub>"] },
+            { question: "[(2i - 3j + k)(i - 2j - k)] vektor moduli?", variants: ["√35", "-7", "7", "35"] },
+            { question: "a{3,4} ga yo‘nalishdosh b{9,12} moduli necha marta katta?", variants: ["3", "2", "4", "5"] },
+            { question: "a{4,6}, b{-3,3}, c{4,1} vektorlarni ifodalang:", variants: ["c = ½a - ⅔b", "c = 4a + 4b", "c = a - ⅓b", "c = ¼a - 4/3 b"] },
+            { question: "d<sub>1</sub>{2,0} va d<sub>2</sub>{1,-1} vektorlar orasidagi burchak?", variants: ["45°", "60°", "90°", "120°"] },
+            { question: "a{1,7} va b{4,3} vektorlar burchagi?", variants: ["α = π/4", "α = 60°", "π/6", "α = 75°"] },
+            { question: "Vektor ko‘paytmasi to‘g‘ri?", variants: ["[ab] = { |b<sub>y</sub> a<sub>y</sub>|; |b<sub>z</sub> a<sub>z</sub>|; |b<sub>x</sub> a<sub>x</sub>| }", "[ab] = { b<sub>x</sub>/a<sub>x</sub>; b<sub>y</sub>/a<sub>y</sub>; b<sub>z</sub>/a<sub>z</sub> +1 }", "[ab] = {b<sub>x</sub>/a<sub>x</sub>; b<sub>y</sub>/a<sub>y</sub>; b<sub>z</sub>/a<sub>z</sub>}", "[ab] = {a<sub>x</sub>+b<sub>x</sub>; a<sub>y</sub>+b<sub>y</sub>; a<sub>z</sub>+b<sub>z</sub>}"] },
+            { question: "P{5, -√2, 3} vektor bilan k vektor burchagi?", variants: ["Cos = 1/2", "Cos = √3/2", "Cos = π/2", "Cos = -√2/6"] },
+            { question: "|MN| vektorning a o‘qdagi proyeksiyasi?", variants: ["|MN|·Cosα", "|MN|·tgα", "|MN|·Ctgα", "|MN|·Sinα"] },
+            { question: "Vektorlar kollinearlik sharti?", variants: ["a<sub>x</sub>/b<sub>x</sub> = a<sub>y</sub>/b<sub>y</sub> = a<sub>z</sub>/b<sub>z</sub>", "a<sub>x</sub>/b<sub>x</sub> + a<sub>y</sub>/b<sub>y</sub> + a<sub>z</sub>/b<sub>z</sub> = 1", "a<sub>x</sub>b<sub>x</sub> + a<sub>y</sub>b<sub>y</sub> + a<sub>z</sub>b<sub>z</sub> = 0", "(a<sub>x</sub>+a<sub>y</sub>+a<sub>z</sub>)/(b<sub>x</sub>+b<sub>y</sub>+b<sub>z</sub>) = λ"] },
+            { question: "a ning qanday qiymatida a{2,a} va b{a,2} qarama-qarshi?", variants: ["a = -2", "a = -1", "a = 1", "a = 2"] },
+            { question: "x + y = 0 qanday chiziq?", variants: ["To‘g‘ri chiziq", "Parabola", "Giperbola", "Ellips"] },
+            { question: "Faqat ikkita turli natural bo'luvchilarga ega bo'lgan natural son nima deyiladi?", variants: ["Tub son", "Murakkab son", "Toq son", "Butun son"] },
+            { question: "Qachon ko'phad nol ko'phad deyiladi?", variants: ["Barcha koeffisiyentlari nolga teng bo'lsa", "Barcha darajalari nolga teng bo'lsa", "Yuqori hadi nolga teng bo'lsa", "Barcha koeffisiyentlari teng bo'lsa"] },
+            { question: "Ochiq va bog'lamli to'plam qanday nomlanadi?", variants: ["Soha", "Egri chiziq", "To'g'ri chiziq", "Jordan chizig'i"] },
+            { question: "Bir o'zgaruvchili ko'phadlarni qo'shish qanday xossaga ega?", variants: ["Kommutativ bo'ladi", "Kommutativ bo'lmaydi", "Ba'zan kommutativ bo'ladi", "Agar ko'phadlar teng bo'lsa kommutativ bo'ladi"] },
+            { question: "Eng kichik natural son bu?", variants: ["1", "2", "3", "0"] },
+            { question: "Eng kichik tub son bu?", variants: ["2", "1", "3", "0"] },
+            { question: "Eng kichik toq tub son bu?", variants: ["3", "1", "2", "0"] },
+            { question: "Arifmetik progressiyaning dastlabki 6 hadlari 7, a<sub>2</sub>, a<sub>3</sub>, a<sub>4</sub>, a<sub>5</sub> va 22 bo'lsa a<sub>2</sub>+a<sub>3</sub>+a<sub>4</sub>+a<sub>5</sub> ni hisoblang", variants: ["58", "65.5", "60.5", "82.7"] },
+            { question: "Balandligi 10 m bo'lgan simyog'ochga shilliqqurt ko'tarilardi. U kunduzi 5 m ko'tariladi, kechasi 4 m pastga tushadi. Necha kundan keyin uchiga chiqadi?", variants: ["6", "5", "4", "3"] },
+            { question: "Go'sht qaynatilganda o'z og'irligining 40% ini yo'qotadi. 6 kg pishgan go'sht olish uchun qancha go'sht qaynatish kerak?", variants: ["10 kg", "9 kg", "8 kg", "7 kg"] },
+            { question: "√a - √b = 3 va a - b = 24 bo'lsa, √a + √b nimaga teng?", variants: ["8", "4.5", "5.5", "6.7"] },
+            { question: "|x + 1| + |x - 3| = 8 tenglama haqida qaysi mulohaza to'g'ri?", variants: ["Ildizlari turli ishorali", "Faqat bitta ildizi bor", "Har ikkala ildiz manfiy", "Har ikkala ildiz musbat"] },
+            { question: "ln(x - 1) = x - 3 tenglamaning nechta ildizi bor?", variants: ["2", "1", "3", "Ildizi yo'q"] },
+            { question: "√(5 - x²) > x - 1 tengsizlikni qanoatlantiruvchi butun sonlar nechta?", variants: ["4", "5", "3", "1"] },
+            { question: "log<sub>1/√2</sub>((4x-1)/(4x+8)) < 0 tengsizlikni yeching.", variants: ["(-∞; -2)", "(1/4; ∞)", "(2; ∞)", "(-2; 1/4)"] },
+            { question: "x² - 10x + q = 0 tenglamaning ildizlaridan biri 5 ga teng. Barcha koeffitsientlar yig'indisini toping.", variants: ["16", "15.5", "36.7", "35.7"] },
+            { question: "x<sup>lg25</sup> + 25<sup>lgx</sup> = 10 tenglamani yeching.", variants: ["√10", "10", "1", "100"] },
+            { question: "594 va 378 ning umumiy bo'luvchilari nechta?", variants: ["8", "9", "7", "6"] },
+            { question: "6 ga karrali ikki xonali natural sonlar nechta?", variants: ["15", "13", "11", "12"] },
+            { question: "Algebra fanining asoschisi kim?", variants: ["Muhammad al-Xorazmiy", "A.R.Beruniy", "A.N.Forobiy", "Ali Qushchi"] },
+            { question: "Algoritm termini qaysi olim nomidan olingan?", variants: ["Al-Xorazmiy", "Al-Farg'oniy", "A.R.Beruniy", "Ali Qushchi"] },
+            { question: "An'anaviy o'qitish usullari qaysi javobda to'la ko'rsatilgan?", variants: ["Suhbat, hikoya qilish (ma'ruza), o'quvchilar mustaqil ishini uyushtirish", "Hikoya (ma'ruza)", "Hikoya qilish, o'quvchilar mustaqil ishini uyushtirish", "Suhbat, o'quvchilar mustaqil ishini uyushtirish"] },
+            { question: "An'anaviy ta'limning kamchiligini ko'rsating.", variants: ["Talabaning aqliy, ijodiy, kommutativ bilim olishini yetarlicha ta'minlamaydi", "Zamonaviy ta'lim talablariga javob bermaydi", "Ta'lim faqat darslik va o'quv qo'llanmalarga asoslanadi", "Ta'limda o'quvchining maqsadlari inobatga olinmaydi"] },
+            { question: "Asosiy ta'lim shaklini ko'rsating?", variants: ["Dars", "Ekskursiya", "To'garak", "Labaratoriya"] },
+            { question: "Avvaldan loyihalashtirilgan o'quv-tarbiyaviy jarayonni tizimli ta'minlaydigan texnologik tadbirlar to'plami:", variants: ["Pedagogik texnologiya", "Tarbiya usuli", "Ta'lim texnologiyasi", "Ishontirish uslubi"] },
+            { question: "Butun fan bo'yicha yutuqlarni aniqlash va baholash?", variants: ["Yakuniy nazorat", "Joriy nazorat", "Oraliq nazorat", "Tashqi nazorat"] },
+            { question: "Dars konspektida qanday maqsadlar ko'rsatiladi?", variants: ["Ta'limiy, tarbiyaviy, rivojlantiruvchi", "Ilmiy, tarbiyaviy", "Ta'limiy, rivojlantiruvchi", "Ta'limiy, ijodiy"] },
+            { question: "Davlat ta'lim standarti asosida belgilangan nashr qanday o'quv adabiyoti?", variants: ["Darslik", "O'quv qo'llanma", "Ma'ruzalar kursi", "Ilmiy adabiyot"] },
+            { question: "Didaktik tamoyillar deganda nimani tushunasiz?", variants: ["Ta'limda o'quv materialini tanlash va uni o'rganishda asoslaniladigan boshlang'ich asosiy qonun-qoidalar", "Pedagogik texnologiyalarning ta'limda qo'llash qoidalari", "O'qituvchi rioya qiladigan metodik sistema", "Talabalar uchun yo'l-qo'riqlar, kasbiy faoliyat uchun nazariy bilimlar tizimi"] },
+            { question: "Matematik xulosa chiqarishning necha turi mavjud?", variants: ["3 ta turi: induktsiya, deduktsiya, analogiya", "Induktsiya, deduktsiya, birlik va umumiy hukm", "Induktsiya, deduktsiya, teorema, aksioma", "To'liq va to'liqmas induktsiya, deduktsiya, matematik induktsiya"] }
+        ];
 
-        function updateSlides() {
-            slides.forEach((slide, index) => {
-                if (index === currentSlide) {
-                    slide.classList.add('active');
-                } else {
-                    slide.classList.remove('active');
-                }
+        let currentQuestionIndex = 0;
+        let progressEl = document.getElementById('progress');
+        let questionEl = document.getElementById('question');
+        let optionsContainer = document.getElementById('options');
+        const quizContainer = document.getElementById('quiz');
+
+        function loadQuestion() {
+            if (currentQuestionIndex >= quizData.length) {
+                showScore();
+                return;
+            }
+
+            const currentQuestion = quizData[currentQuestionIndex];
+            progressEl.textContent = `Savol ${currentQuestionIndex + 1} / ${quizData.length}`;
+            questionEl.innerHTML = currentQuestion.question;
+            optionsContainer.innerHTML = '';
+
+            // Correct answer is always index 0 (A variant)
+            const choices = currentQuestion.variants.map((variant, index) => {
+                return { text: variant, isCorrect: index === 0 };
             });
 
-            // Update progress bar
-            const percentage = ((currentSlide + 1) / slides.length) * 100;
-            progressBar.style.width = percentage + '%';
+            // Shuffle
+            for (let i = choices.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [choices[i], choices[j]] = [choices[j], choices[i]];
+            }
 
-            // Update slide counter text
-            slideNumDisplay.innerText = `Slide ${currentSlide + 1} of ${slides.length}`;
-
-            // Handle button disabled states
-            prevBtn.disabled = (currentSlide === 0);
-            nextBtn.disabled = (currentSlide === slides.length - 1);
+            choices.forEach(choice => {
+                const button = document.createElement('button');
+                button.classList.add('option-btn');
+                button.innerHTML = choice.text;
+                button.addEventListener('click', () => handleAnswer(button, choice.isCorrect));
+                optionsContainer.appendChild(button);
+            });
         }
 
-        function nextSlide() {
-            if (currentSlide < slides.length - 1) {
-                currentSlide++;
-                updateSlides();
+        function handleAnswer(selectedButton, isCorrect) {
+            const buttons = optionsContainer.querySelectorAll('.option-btn');
+            buttons.forEach(btn => btn.classList.add('disabled'));
+
+            if (isCorrect) {
+                selectedButton.classList.add('correct');
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    loadQuestion();
+                }, 5000);
+            } else {
+                selectedButton.classList.add('incorrect');
+                setTimeout(() => {
+                    currentQuestionIndex++;
+                    loadQuestion();
+                }, 1200);
             }
         }
 
-        function prevSlide() {
-            if (currentSlide > 0) {
-                currentSlide--;
-                updateSlides();
-            }
+        function showScore() {
+            quizContainer.innerHTML = `
+                <div class="score-screen">
+                    <h2 style="margin-bottom:20px;">✅ Test yakunlandi!</h2>
+                    <button class="restart-btn" onclick="restartQuiz()">🔄 Qayta boshlash</button>
+                </div>
+            `;
         }
 
-        // Keyboard Event Listeners
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowRight' || e.key === ' ') {
-                e.preventDefault(); 
-                nextSlide();
-            } else if (e.key === 'ArrowLeft') {
-                prevSlide();
-            }
-        });
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            quizContainer.innerHTML = `
+                <div class="progress-bar" id="progress"></div>
+                <div class="question-text" id="question"></div>
+                <div class="options-container" id="options"></div>
+            `;
+            progressEl = document.getElementById('progress');
+            questionEl = document.getElementById('question');
+            optionsContainer = document.getElementById('options');
+            loadQuestion();
+        }
 
-        // Initialize setup on load
-        updateSlides();
+        loadQuestion();
     </script>
 </body>
 </html>

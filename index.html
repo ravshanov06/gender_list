@@ -96,6 +96,13 @@
             color: var(--accent-red);
         }
 
+        .option-btn.show-correct {
+            background-color: rgba(16, 185, 129, 0.15) !important;
+            border-color: var(--accent-green) !important;
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
         .disabled {
             pointer-events: none;
         }
@@ -250,10 +257,11 @@
                 [choices[i], choices[j]] = [choices[j], choices[i]];
             }
 
-            choices.forEach(choice => {
+            choices.forEach((choice, idx) => {
                 const button = document.createElement('button');
                 button.classList.add('option-btn');
                 button.innerHTML = choice.text;
+                button.dataset.correct = choice.isCorrect;
                 button.addEventListener('click', () => handleAnswer(button, choice.isCorrect));
                 optionsContainer.appendChild(button);
             });
@@ -262,6 +270,13 @@
         function handleAnswer(selectedButton, isCorrect) {
             const buttons = optionsContainer.querySelectorAll('.option-btn');
             buttons.forEach(btn => btn.classList.add('disabled'));
+
+            // Find and highlight the correct answer
+            buttons.forEach(btn => {
+                if (btn.dataset.correct === 'true') {
+                    btn.classList.add('show-correct');
+                }
+            });
 
             if (isCorrect) {
                 selectedButton.classList.add('correct');
